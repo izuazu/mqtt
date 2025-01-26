@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IoT MQTT Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>IoT MQTT Dashboard</h1>
+  </header>
+
+  <main>
+    <!-- Section for publishing messages -->
+    <section>
+      <h2>Publish Message</h2>
+      <form id="publish-form" aria-label="Publish MQTT Message">
+        <div>
+          <label for="topic">Topic:</label>
+          <input type="text" id="topic" name="topic" placeholder="Enter topic" required />
+        </div>
+        <div>
+          <label for="message">Message:</label>
+          <input type="text" id="message" name="message" placeholder="Enter message" required />
+        </div>
+        <div>
+          <button type="submit">Publish</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Section for displaying received messages -->
+    <section>
+      <h2>Received Messages</h2>
+      <ul id="messages" aria-live="polite" aria-label="MQTT Messages"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 IoT Dashboard</p>
+  </footer>
+
+  <!-- Socket.IO for real-time communication -->
+  <script src="/socket.io/socket.io.js"></script>
+  <!-- Custom JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
